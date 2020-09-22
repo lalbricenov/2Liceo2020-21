@@ -1,0 +1,6 @@
+Página web con varios archivos html
+File paths
+Barra de navegación
+Bootstrap
+---------------------
+index.html -> archivo que el navegador abre por defecto al entrar en una carpeta

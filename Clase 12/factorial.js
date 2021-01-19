@@ -19,3 +19,8 @@ function factorial(n) {
     return n * factorial(n - 1);
   }
 }
+
+// function areaCirc(r)
+// {
+//     return aksdjf;kalsjfak
+// }

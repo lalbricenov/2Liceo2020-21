@@ -10,6 +10,7 @@ let planetas = [
     {nombre:"Neptuno", diametro: 49528, imagen:"https://upload.wikimedia.org/wikipedia/commons/6/63/Neptune_-_Voyager_2_%2829347980845%29_flatten_crop.jpg"}
 ]
 // Creo una variable que haga referencia a la tabla
+// QuerySelector selecciona un elemento del html, usando los selectores de css.
 let tabla = document.querySelector('#planetas')
 // console.log(tabla)
 

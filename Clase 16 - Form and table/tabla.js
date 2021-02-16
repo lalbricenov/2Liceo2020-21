@@ -1,6 +1,6 @@
 // Lista de planetas y sus imágenes- Lista de objetos.
 let planetas = [
-    {nombre:"Mercurio", diametro:4879,imagen:"https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Mercury_in_color_-_Prockter07_centered.jpg/1200px-Mercury_in_color_-_Prockter07_centered.jpg "},
+    {nombre:"Mercurio", diametro:4879,imagen:"https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Mercury_in_color_-_Prockter07_centered.jpg/1200px-Mercury_in_color_-_Prockter07_centered.jpg"},
     {nombre:"Venus", diametro:12104,imagen:"https://ichef.bbci.co.uk/news/640/cpsprodpb/CEAA/production/_114360925_jaxa-isas-akatsuki-project-team.jpg"},
     {nombre:"Tierra", diametro:12756,imagen:"https://dam.ngenespanol.com/wp-content/uploads/2019/05/Tierra-Espacio.png"},
     {nombre:"Marte", diametro:6792,imagen:"https://i.blogs.es/0585c9/marte8k/1366_2000.jpg "},
@@ -25,11 +25,17 @@ function llenarTabla(){
 }
 
 // variable que corresponde al formulario.
-let form = document.querySelector("form");
+let form = document.querySelector("#formularioAdd");
 
 function addPlanet(){
+    // Objeto de tipo input, que tenga una propiedad llamada name y un valor
+    // de esa propiedad igual a "nombre"
     let nombreNuevo = document.querySelector("input[name=nombre]").value
+    // Objeto de tipo input, que tenga una propiedad llamada name y un valor
+    // de esa propiedad igual a "diametro"
     let diametroNuevo = parseFloat(document.querySelector("input[name=diametro]").value)
+    // Objeto de tipo input, que tenga una propiedad llamada name y un valor
+    // de esa propiedad igual a "urlImagen"
     let urlNuevo = document.querySelector("input[name=urlImagen]").value
     
     // con los datos ingresados por el usuario voy a añadir un planeta a la lista de planetas
@@ -49,4 +55,31 @@ function addPlanet(){
 }
 
 form.onsubmit = addPlanet;
+
+// Para borrar un planeta
+let formBorrar = document.querySelector("#formularioDelete");
+
+function deletePlanet(){
+    // Objeto de tipo input, que tenga una propiedad llamada name y un valor
+    // de esa propiedad igual a "nombre"
+    let nombrePlanetaABorrar = document.querySelector("#formularioDelete input[name=nombre]").value
+    
+    // crear el planeta nuevo
+    console.log("Ahora voy a borrar el siguiente planeta");
+    console.log(nombrePlanetaABorrar)
+    
+    // Determinar la posición del elemento a borrar en el array
+    // find, findIndex
+    // console.log(planetas.find(planeta => planeta.nombre == nombrePlanetaABorrar));
+    let aBorrar = planetas.findIndex(planeta => planeta.nombre == nombrePlanetaABorrar);
+    // Borrar el elemento del array
+    // en la posición aBorrar deseo borrar 1 elemento
+    planetas.splice(aBorrar, 1);
+    // generar de nuevo la tabla
+    llenarTabla();
+    // return false hace que no se actualice la página.
+    return false;
+}
+formBorrar.onsubmit = deletePlanet;
+
 llenarTabla();

@@ -72,6 +72,8 @@ function deletePlanet(){
     // find, findIndex
     // console.log(planetas.find(planeta => planeta.nombre == nombrePlanetaABorrar));
     let aBorrar = planetas.findIndex(planeta => planeta.nombre == nombrePlanetaABorrar);
+    // si el elemento no existe mostrarle un mensaje al usuario
+    if(aBorrar == -1) alert("Planeta no encontrado");
     // Borrar el elemento del array
     // en la posición aBorrar deseo borrar 1 elemento
     planetas.splice(aBorrar, 1);

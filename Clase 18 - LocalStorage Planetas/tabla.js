@@ -1,14 +1,10 @@
-// Lista de planetas y sus imágenes- Lista de objetos.
-let planetas = [
-    {nombre:"Mercurio", diametro:4879,imagen:"https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Mercury_in_color_-_Prockter07_centered.jpg/1200px-Mercury_in_color_-_Prockter07_centered.jpg"},
-    {nombre:"Venus", diametro:12104,imagen:"https://ichef.bbci.co.uk/news/640/cpsprodpb/CEAA/production/_114360925_jaxa-isas-akatsuki-project-team.jpg"},
-    {nombre:"Tierra", diametro:12756,imagen:"https://dam.ngenespanol.com/wp-content/uploads/2019/05/Tierra-Espacio.png"},
-    {nombre:"Marte", diametro:6792,imagen:"https://i.blogs.es/0585c9/marte8k/1366_2000.jpg "},
-    {nombre:"Júpiter", diametro:142984,imagen:"https://www.ecestaticos.com/image/clipping/d0d127b5b80c69905e744d76a836d4c8/un-planeta-doble-que-no-se-ve-desde-la-edad-media-el-fenomeno-unico-de-jupiter-y-saturno.jpg"},
-    {nombre:"Saturno", diametro:120536,imagen: "https://www.rcinet.ca/es/wp-content/uploads/sites/4/2020/12/saturno-635x357.jpg"},
-    {nombre:"Urano", diametro:51118,imagen:"https://www.astrobio.net/images/galleryimages_images/Gallery_Image_8386.jpg"},
-    {nombre:"Neptuno", diametro: 49528, imagen:"https://upload.wikimedia.org/wikipedia/commons/6/63/Neptune_-_Voyager_2_%2829347980845%29_flatten_crop.jpg"}
-]
+// Leo la variable planetas del almacenamiento local
+// y si existe la creo
+
+let planetas = JSON.parse(localStorage.getItem("planetas"));
+if (planetas == null) planetas = [];
+
+
 // Creo una variable que haga referencia a la tabla
 // QuerySelector selecciona un elemento del html, usando los selectores de css.
 let tabla = document.querySelector('#planetas')
@@ -47,6 +43,9 @@ function addPlanet(){
 
     // añado el planeta a la lista
     planetas.push(planetaNuevo)
+    
+    // Guardo la lista de planetas en el almacenamiento local
+    localStorage.setItem("planetas", JSON.stringify(planetas));
     // planetas[2]
 
     // generar de nuevo la tabla
@@ -55,7 +54,8 @@ function addPlanet(){
     // eso los paréntesis están vacíos.
     llenarTabla();
     // return false hace que no se actualice la página.
-    return false;
+    // return false;
+    // puedo quitar el return false porque no hay problema si la página se recarga
 }
 
 form.onsubmit = addPlanet;

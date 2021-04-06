@@ -24,6 +24,7 @@ ctx.fill()
 
 // camino compuesto de lineas rectas y curvas
 
+ctx.fillStyle = "green"
 ctx.beginPath()
 ctx.moveTo(80, 320)// muevo el cursor a esa posicion
 ctx.lineTo(200, 320)

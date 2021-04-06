@@ -30,7 +30,7 @@ function addPlanet(){
     // Objeto de tipo input, que tenga una propiedad llamada name y un valor
     // de esa propiedad igual a "diametro"
     let diametroNuevo = parseFloat(document.querySelector("input[name=diametro]").value)
-    // Objeto de tipo input, que tenga una propiedad llamada name y un valor
+    // Objeto de tipo input, que tenga una propiedad llamada name  y un valor
     // de esa propiedad igual a "urlImagen"
     let urlNuevo = document.querySelector("input[name=urlImagen]").value
     
@@ -60,32 +60,32 @@ function addPlanet(){
 
 form.onsubmit = addPlanet;
 
-// Para borrar un planeta
-let formBorrar = document.querySelector("#formularioDelete");
+// // Para borrar un planeta
+// let formBorrar = document.querySelector("#formularioDelete");
 
-function deletePlanet(){
-    // Objeto de tipo input, que tenga una propiedad llamada name y un valor
-    // de esa propiedad igual a "nombre"
-    let nombrePlanetaABorrar = document.querySelector("#formularioDelete input[name=nombre]").value
+// function deletePlanet(){
+//     // Objeto de tipo input, que tenga una propiedad llamada name y un valor
+//     // de esa propiedad igual a "nombre"
+//     let nombrePlanetaABorrar = document.querySelector("#formularioDelete input[name=nombre]").value
     
-    // crear el planeta nuevo
-    console.log("Ahora voy a borrar el siguiente planeta");
-    console.log(nombrePlanetaABorrar)
+//     // crear el planeta nuevo
+//     console.log("Ahora voy a borrar el siguiente planeta");
+//     console.log(nombrePlanetaABorrar)
     
-    // Determinar la posición del elemento a borrar en el array
-    // find, findIndex
-    // console.log(planetas.find(planeta => planeta.nombre == nombrePlanetaABorrar));
-    let aBorrar = planetas.findIndex(planeta => planeta.nombre == nombrePlanetaABorrar);
-    // si el elemento no existe mostrarle un mensaje al usuario
-    if(aBorrar == -1) alert("Planeta no encontrado");
-    // Borrar el elemento del array
-    // en la posición aBorrar deseo borrar 1 elemento
-    planetas.splice(aBorrar, 1);
-    // generar de nuevo la tabla
-    llenarTabla();
-    // return false hace que no se actualice la página.
-    return false;
-}
-formBorrar.onsubmit = deletePlanet;
+//     // Determinar la posición del elemento a borrar en el array
+//     // find, findIndex
+//     // console.log(planetas.find(planeta => planeta.nombre == nombrePlanetaABorrar));
+//     let aBorrar = planetas.findIndex(planeta => planeta.nombre == nombrePlanetaABorrar);
+//     // si el elemento no existe mostrarle un mensaje al usuario
+//     if(aBorrar == -1) alert("Planeta no encontrado");
+//     // Borrar el elemento del array
+//     // en la posición aBorrar deseo borrar 1 elemento
+//     planetas.splice(aBorrar, 1);
+//     // generar de nuevo la tabla
+//     llenarTabla();
+//     // return false hace que no se actualice la página.
+//     return false;
+// }
+// formBorrar.onsubmit = deletePlanet;
 
 llenarTabla();

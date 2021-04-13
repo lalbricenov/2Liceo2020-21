@@ -29,7 +29,7 @@ ctx.beginPath()
 ctx.moveTo(80, 320)// muevo el cursor a esa posicion
 ctx.lineTo(200, 320)
 ctx.arc(200, 360, 40, -Math.PI/2, Math.PI/2)
-ctx.lineTo(140, 400)
+// ctx.lineTo(140, 400)
 ctx.stroke()
 ctx.fill()
 // ctx.endPath()

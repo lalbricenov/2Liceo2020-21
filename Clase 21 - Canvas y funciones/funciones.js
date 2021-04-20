@@ -11,16 +11,16 @@ let ctx = canvas.getContext("2d")
 // y el radio, y dibuja un cuadrado circunscrito en un circulo
 function dibujarBoton(xC, yC, r){
     // dibujo el circulo
-    ctx.beginPath()
-    ctx.strokeStyle = 'blue'
-    ctx.fillStyle = 'blue'
+    ctx.beginPath();
+    ctx.strokeStyle = 'blue';
+    ctx.fillStyle = 'blue';
     ctx.arc(xC, yC, r, 0, 2*Math.PI);
-    ctx.stroke()
-    ctx.fill()
+    ctx.stroke();
+    ctx.fill();
     
     // dibujo el cuadrado
-    ctx.strokeStyle = 'black'
-    ctx.beginPath()
+    ctx.strokeStyle = 'black';
+    ctx.beginPath();
     ctx.strokeRect(xC-r, yC-r, 2*r, 2*r);
 }
 

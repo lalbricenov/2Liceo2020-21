@@ -72,14 +72,14 @@ let x = 0;// La coordenada x del lapiz
 let y = 200;
 let vX = 60; // en px/s
 let dT = 30; // en milisegundos
+
 function moverYDibujar(){
     ctx.clearRect(0,0, 600, 400);
     let dX = (dT/1000) * vX;// desplazamiento
     x = x + dX;// se cambia el valor de la x
-    y = 200+100*Math.sin(x*Math.PI/180)
+    y = 100*Math.sin(x*Math.PI/180) + 200
     dibujarLapiz(x, y, 50, 60,"black");
 }
 
 // La funcion se debe ejecuar cada dT milisegundos
 window.setInterval(moverYDibujar, dT);
-

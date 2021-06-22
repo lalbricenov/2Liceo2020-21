@@ -53,7 +53,7 @@ function crearPelota(){
 
     //añado la nueva pelota al array de pelotas
     pelotas.push(pelotaNueva);
-}
+}   
 
 window.setInterval(crearPelota, 1000);
 
